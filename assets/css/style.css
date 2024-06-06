@@ -12,16 +12,17 @@ body {
 }
 
 :root {
-  --bg: rgb(116, 82, 7);
-  --secondary: #00ccff;
-  --primary: #ffae00;
-  --body: #e0ecff;
+  --bg: #ea1d24;
+  --secondary: rgb(0, 204, 255);
+  --primary: rgb(254, 212, 3);
+  --body: rgb(224, 236, 255);
 }
 
 /* Navbar Section */
 .navbar {
   background-color: var(--body);
   width: 100%;
+  /* height: 500px; */
   padding: 12px 0px;
   position: fixed;
   z-index: 9999;
@@ -86,10 +87,8 @@ body {
 }
 
 .navbar .box-navbar .brand-logo {
-  /* background-color: red; */
   padding-right: 180px;
   color: #303030;
-  /* background-color: #011627; */
 }
 
 .navbar .box-navbar .brand-logo span {
@@ -154,15 +153,14 @@ body {
 /* Hero section */
 .hero {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  /* flex-direction: row; */
-  /* display: grid; */
-  /* place-items: center; */
   align-items: center;
   justify-content: center;
-  /* padding: 0 50px; */
-  background-color: var(--body);
+  background-image: url("../image/hero-bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   z-index: 999;
 }
 
@@ -177,8 +175,6 @@ body {
   font-size: 24px;
   line-height: 1.2;
   color: black;
-  /* margin-bottom: 35px; */
-  /* background-color: red; */
   width: 90%;
   padding-bottom: 30px;
 }
@@ -212,7 +208,7 @@ body {
 .hero .box-hero .box-img::before {
   content: "";
   position: absolute;
-  inset: -10px 100px;
+  inset: -10px 80px;
   background: linear-gradient(315deg, #00ccff, #d400d4);
   transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -224,8 +220,8 @@ body {
 }
 
 .hero .box-hero .box-img:hover::before {
-  inset: -20px 0px;
-  background: linear-gradient(var(--primary), yellow);
+  inset: -20px 15px;
+  background: linear-gradient(var(--primary), var(--bg));
 }
 
 @keyframes animate {
@@ -263,7 +259,7 @@ body {
 .hero .box-hero .box-img .img-content {
   position: absolute;
   inset: 12px;
-  border: 6px solid rgb(63, 44, 1);
+  border: 4px solid var(--bg);
   z-index: 3;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -325,12 +321,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  /* margin-top: 50px; */
-  background-image: url(../image/about-bg.svg);
-  background-repeat: no-repeat;
-
-  /* padding: 0 30px; */
-  /* margin: 0px 30px; */
+  margin-bottom: 20px;
 }
 
 .about .box-about {
