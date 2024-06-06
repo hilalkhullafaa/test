@@ -163,6 +163,7 @@ body {
   justify-content: center;
   /* padding: 0 50px; */
   background-color: var(--body);
+  z-index: 999;
 }
 
 .hero .box-hero {
@@ -246,7 +247,8 @@ body {
   content: "";
   position: absolute;
   inset: 10px;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background-color: var(--body);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -377,11 +379,12 @@ body {
 .about .box-about .artikel-about p {
   line-height: 1.4;
   /* background-color: #00ccff */
+  margin-bottom: 50px;
 }
 
-.about .box-about .artikel-about button {
+.about .box-about .artikel-about .btn-about {
   padding: 15px 30px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-color: var(--primary);
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 50px;
@@ -392,9 +395,97 @@ body {
   cursor: pointer;
 }
 
-.about .box-about .artikel-about button a {
+.about .box-about .artikel-about a {
   color: black;
   font-weight: bold;
+  cursor: pointer;
+}
+
+/* Box modal about */
+.popup-about {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: -900px;
+  z-index: 9999;
+  opacity: 0;
+}
+
+.popup-content {
+  width: 65%;
+  /* height: px; */
+  background-color: #ddd;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.25);
+  -webkit-transform: translate(-50%, -50%) scale(0.25);
+  -moz-transform: translate(-50%, -50%) scale(0.25);
+  -ms-transform: translate(-50%, -50%) scale(0.25);
+  -o-transform: translate(-50%, -50%) scale(0.25);
+  display: flex;
+  padding: 15px;
+  gap: 25px;
+  opacity: 0;
+  transition: all 0.5s 0.1s ease;
+  -webkit-transition: all 0.5s 0.1s ease;
+  -moz-transition: all 0.5s 0.1s ease;
+  -ms-transition: all 0.5s 0.1s ease;
+  -o-transition: all 0.5s 0.1s ease;
+}
+
+.popup-about .popup-content .popup-img {
+  width: 100%;
+  background-image: url("../image/box-about.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.popup-about .popup-content .popup-img i {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.popup-content .popup-text {
+  /* height: 500px; */
+  padding: 10px 8px;
+  color: #333;
+  font-size: 12px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), -2px -2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content .popup-text h2 {
+  padding: 6px 0;
+}
+
+.popup-content .popup-text ul {
+  line-height: 1.6;
+}
+
+.popup-about.active {
+  opacity: 1;
+  top: 0;
+}
+
+.popup-about.active .popup-content {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -moz-transform: translate(-50%, -50%) scale(1);
+  -ms-transform: translate(-50%, -50%) scale(1);
+  -o-transform: translate(-50%, -50%) scale(1);
 }
 
 /* Responsive */
@@ -472,6 +563,18 @@ body {
     row-gap: 50px;
     padding-top: 100px;
   }
+
+  /* Box modal about */
+  .popup-content {
+    width: 80%;
+  }
+
+  .popup-content .popup-text {
+    width: 100%;
+    height: 250px;
+    border-bottom: 0;
+    overflow: scroll;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -501,15 +604,8 @@ body {
   }
 
   .about .box-about {
-    /* grid-template-columns: repeat(1, 1fr); */
-    /* grid-template-rows: repeat(2, 1fr); */
-    /* background-color: red; */
-    /* margin: 100px 0px; */
-    /* gap: 50px; */
     display: flex;
     flex-direction: column;
-    /* padding: 50px 10px; */
-    /* background-color: aqua; */
   }
 
   .about .box-about .img-about {
@@ -518,6 +614,15 @@ body {
 
   .about .box-about .img-about img {
     width: 200px;
+  }
+
+  /* Box modal about */
+  .popup-content {
+    width: 90%;
+  }
+
+  .popup-about .popup-text {
+    width: 70%;
   }
 }
 
@@ -556,8 +661,31 @@ body {
   }
 
   /* About section */
-
   .about .box-about .img-about img {
     width: 100%;
+  }
+
+  /* Box modal about */
+  .popup-content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup-about .popup-img {
+    height: 250px;
+  }
+
+  .popup-about .popup-text {
+    width: 100%;
+    /* height: 200px; */
+  }
+
+  .popup-content .popup-text h1 {
+    font-size: 14px;
+  }
+
+  .popup-content .popup-text h2 {
+    font-size: 12px;
   }
 }
