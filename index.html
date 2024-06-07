@@ -26,6 +26,9 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+    <!-- Aos Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My Style -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -81,7 +84,7 @@
     <section class="hero">
       <div class="container">
         <div class="box-hero">
-          <div class="box">
+          <div data-aos="fade-right" data-aos-duration="1000" class="box">
             <h2>Bridge English School & Traning👋</h2>
             <p>
               Belajar bahasa inggris mulai dari Nol hingga menjadi
@@ -92,7 +95,7 @@
               >Join with Us</a
             >
           </div>
-          <div class="box-img">
+          <div class="box-img" data-aos="fade-left" data-aos-duration="1000">
             <div class="img-content">
               <img src="assets/image/hero.png" alt="hero" />
             </div>
@@ -106,13 +109,18 @@
     <section class="about" id="about">
       <div class="container">
         <div class="box-about">
-          <div class="img-about">
+          <div class="img-about" data-aos="fade-up" data-aos-duration="1000">
             <img src="assets/image/about1.png" alt="img1" class="image1" />
             <img src="assets/image/about2.png" alt="img2" class="image2" />
             <img src="assets/image/about1.png" alt="img3" class="image3" />
             <img src="assets/image/about2.png" alt="img4" class="image4" />
           </div>
-          <div class="artikel-about">
+          <div
+            class="artikel-about"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
             <h2>What is KIC?</h2>
             <p>
               Kampung Inggris Cipanas BEST (Bridge English School & Traning)
@@ -173,7 +181,11 @@
     <section class="program" id="program">
       <h2 class="header-text">Extra Program</h2>
       <div class="extra-program-content">
-        <div class="container-extra card-program">
+        <div
+          class="container-extra card-program1"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
           <div class="extra-program">
             <h1 class="program-header">Paket</h1>
             <h2 class="program-title">Program Outbound</h2>
@@ -192,7 +204,12 @@
             <a href="https://wa.me/+6289609014241">Daftar</a>
           </div>
         </div>
-        <div class="container-extra card-program">
+        <div
+          class="container-extra card-program2"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="300"
+        >
           <div class="extra-program">
             <h1 class="program-header">Paket</h1>
             <h2 class="program-title">Pembinaan Eskul Sekolah</h2>
@@ -210,7 +227,12 @@
             <a href="https://wa.me/+6289609014241">Daftar</a>
           </div>
         </div>
-        <div class="container-extra card-program">
+        <div
+          class="container-extra card-program3"
+          data-aos="fade-up"
+          data-aos-duration="800"
+          data-aos-delay="300"
+        >
           <div class="extra-program">
             <h1 class="program-header">Paket</h1>
             <h2 class="program-title">Program Interview Kerja</h2>
@@ -237,6 +259,12 @@
     <!-- Feather Icons Script -->
     <script>
       feather.replace();
+    </script>
+
+    <!-- Aos Animation Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
 
     <!-- My JavaScript -->
