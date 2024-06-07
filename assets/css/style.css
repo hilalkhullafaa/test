@@ -507,7 +507,8 @@ body {
   background-color: #e0ecff;
 }
 
-.program-extra .header-text {
+.program-extra .header-text,
+.program-main .header-text {
   font-size: 34px;
   font-weight: 600;
   text-align: center;
@@ -566,9 +567,9 @@ body {
 .program-price .price {
   text-align: center;
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.6;
-  font-style: italic;
+
   padding: 0 0 30px;
 }
 
@@ -576,7 +577,6 @@ body {
   text-align: center;
   font-size: 28px;
   font-weight: 600;
-  font-style: italic;
 }
 
 .program-action {
@@ -611,7 +611,7 @@ body {
 /* Main program */
 .program-main {
   width: 100%;
-  padding-top: 30px;
+  padding-top: 35px;
 }
 
 .program-main .container {
@@ -620,12 +620,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.program-main .header-text {
-  font-size: 34px;
-  font-weight: 600;
-  text-align: center;
 }
 
 .program-main-container {
@@ -932,6 +926,7 @@ body {
   }
 
   /* Our Program section */
+  /* Extra Program */
   .program-extra .extra-program-content {
     display: flex;
     flex-direction: column;
@@ -945,6 +940,14 @@ body {
 
   .container-extra .program-action {
     left: 0px;
+  }
+
+  .program-main {
+    margin-top: 100px;
+  }
+
+  .program-main .header-text {
+    margin-bottom: 20px;
   }
 }
 
@@ -1027,7 +1030,8 @@ body {
   }
 
   /* Our program section */
-  .program-extra .header-text {
+  .program-extra .header-text,
+  .program-main .header-text {
     font-size: 22px;
   }
 
